@@ -3,9 +3,10 @@ const express = require("express");
 const userRouter=require("./routes/user_route")
 const app=express();
 const dotenv=require("dotenv")
+const flieUpload=require("express-fileupload")
 dotenv.config()
 
-
+app.use(flieUpload())
 app.use(express.json())
 
 app.use(express.urlencoded({extended:false}))

@@ -61,11 +61,22 @@ const getUser= async (req,res)=>{
     console.error(err.message);
   }
   }
+  const search = async(req, res) => {
+    console.log(req.body);
+  const  {query}  = req.query.q;
+  try {
+    const todo = await pool.query(queryUer.searchUserQuery, [query]);
+    res.json({ message: "Success", Data: query });
+  } catch (err) {
+    console.error(err.message);
+  }
+  }
   module.exports={
     getUser,
     createUser,
     getUserById,
     createUser,
     uqdateUser,
-    delectUser
+    delectUser,
+    search
   }

@@ -7,5 +7,6 @@ userRouter.get("/:id",controllerUser.getUserById)
 userRouter.post("/",controllerUser.createUser)
 userRouter.put("/:id",controllerUser.uqdateUser)
 userRouter.delete("/:id",controllerUser.delectUser)
+userRouter.get("/search",controllerUser.search)
 
 module.exports=userRouter;
